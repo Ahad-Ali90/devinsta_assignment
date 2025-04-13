@@ -40,6 +40,7 @@ class AnalyticsDataController extends Controller
 
     public function store(Request $request)
     {
+        // return "ok";
         $action = $request->input('action');
         $platform = str_replace('_ok', '', $action);
 
@@ -63,36 +64,8 @@ class AnalyticsDataController extends Controller
 
 
 
-    public function show(AnalyticsData $analytic)
-    {
-        return view('analytics.show', compact('analytic'));
-    }
 
-    public function edit(AnalyticsData $analytic)
-    {
-        return view('analytics.edit', compact('analytic'));
-    }
 
-    public function update(Request $request, AnalyticsData $analytic)
-    {
-        $request->validate([
-            'platform' => 'required|string',
-            'date' => 'required|date',
-            'data' => 'required|json',
-        ]);
 
-        $analytic->update([
-            'platform' => $request->platform,
-            'date' => $request->date,
-            'data' => json_decode($request->data, true),
-        ]);
 
-        return redirect()->route('analytics.index')->with('success', 'Analytics data updated.');
-    }
-
-    public function destroy(AnalyticsData $analytic)
-    {
-        $analytic->delete();
-        return redirect()->route('analytics.index')->with('success', 'Analytics data deleted.');
-    }
 }

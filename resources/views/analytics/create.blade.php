@@ -64,6 +64,7 @@ $(document).ready(function() {
                 [field + '_date']: date
             },
             success: function(res) {
+
                 alert("Saved successfully!");
                 row.find('.metric-data').val('');
                 row.find('.metric-date').val('');

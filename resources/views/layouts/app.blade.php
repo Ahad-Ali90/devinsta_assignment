@@ -15,7 +15,7 @@
     <!-- Load Moment.js and Chartjs date adapter second -->
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Optional Custom CSS -->
     <style>
     body {
